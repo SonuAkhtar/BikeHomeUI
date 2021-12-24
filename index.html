@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage UI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <h2>Bike Basics</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </header>
+
+        <div class="banner">
+            <div class="text">
+                <h1>MV Agusta</h1>
+                <h3>Brutale 800</h3>
+                <p>MV Agusta Brutale 800 is powered by 798 cc engine.
+                    This Brutale 800 engine generates a power of 140 PS @12300 rpm and a torque of 87 Nm @10250 rpm. 
+                    It gets Disc brakes in the front and rear and Tubeless Tyre with Alloy Wheels.</p>
+                <a href="#">Know More</a>
+            </div>
+            <div class="img">
+                <div class="img-inner">
+                    <img src="https://www.pixel4k.com/wp-content/uploads/2018/09/mv-agusta-brutale-800-american-4k_1536316298.jpg" alt="main-img">
+                    <div class="info-dot dot1">
+                        <button><i class="fas fa-plus"></i></button>
+                        <div class="info-detail">
+                            <h3>Specifications</h3>
+                            <div class="detail-container">
+                                <div class="detail-list">
+                                    <div class="detail-list-item">Engine Type</div>
+                                    <div class="detail-list-item item">3 cylinder, 4 stroke, 12 valve</div>
+                                </div>
+                                <div class="detail-list">
+                                    <div class="detail-list-item">Max Power</div>
+                                    <div class="detail-list-item item">140 PS @ 12300 rpm</div>
+                                </div>
+                                <div class="detail-list">
+                                    <div class="detail-list-item">Fuel Capacity</div>
+                                    <div class="detail-list-item item">16.5 Litre</div>
+                                </div>
+                                <div class="detail-list">
+                                    <div class="detail-list-item">Cooling System</div>
+                                    <div class="detail-list-item item">Liquid Cooled</div>
+                                </div>
+                                <div class="detail-list">
+                                    <div class="detail-list-item">Max Torque</div>
+                                    <div class="detail-list-item item">87 Nm @10250 rpm</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-dot dot2">
+                        <button><i class="fas fa-plus"></i></button>
+                        <div class="info-detail">
+                            <h3>Features</h3>
+                            <div class="detail-container">
+                                <div class="detail-list">
+                                    <div class="detail-list-item">ABS</div>
+                                    <div class="detail-list-item item">Dual Channel</div>
+                                </div>
+                                <div class="detail-list">
+                                    <div class="detail-list-item">Speedometer</div>
+                                    <div class="detail-list-item item">Digital</div>
+                                </div>
+                                <div class="detail-list">
+                                    <div class="detail-list-item">Mobile Connectivity</div>
+                                    <div class="detail-list-item item">Bluetooth</div>
+                                </div>
+                                <div class="detail-list">
+                                    <div class="detail-list-item">Cruise Control</div>
+                                    <div class="detail-list-item item">Yes</div>
+                                </div>
+                                <div class="detail-list">
+                                    <div class="detail-list-item">Odometer</div>
+                                    <div class="detail-list-item item">Digital</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-dot dot3">
+                        <button><i class="fas fa-plus"></i></button>
+                        <div class="info-detail">
+                            <h3>Highlights</h3>
+                            <div class="detail-container">
+                                <div class="detail-list">
+                                    <div class="detail-list-item">Launch Date</div>
+                                    <div class="detail-list-item item">December 2022</div>
+                                </div>
+                                <div class="detail-list">
+                                    <div class="detail-list-item">Top Speed</div>
+                                    <div class="detail-list-item item">237kmph</div>
+                                </div>
+                                <div class="detail-list">
+                                    <div class="detail-list-item">Price</div>
+                                    <div class="detail-list-item item">Rs. 15.59 Lakh</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(".info-dot").on('click', function(e){
+                e.stopPropagation();
+                $(this).find(".info-detail").addClass("show")
+                $(".info-dot").not(this).find(".info-detail").removeClass("show")
+            })
+            $(document).on('click', function(){
+                $(".info-detail").removeClass("show")
+            })
+        })
+    </script>
+</body>
+</html>
