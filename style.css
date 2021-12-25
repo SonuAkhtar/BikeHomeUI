@@ -56,7 +56,9 @@ header .menu ul li:last-child{
 }
 
 header .menu ul li a{
-    color: #bdb8b8;
+    color: #afaaaa;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -65,6 +67,7 @@ header .menu ul li a{
 
 header .menu ul li a:hover{
     color: #fff;
+    text-shadow: 0 2px 20px #fff;
 }
 
 header .social a{
@@ -149,14 +152,19 @@ header .social a:nth-child(3):hover{
     animation: textmove 3s cubic-bezier(.44, .05, .0, .98) 0s;
 }
 
+.a-wrapper{
+    cursor: pointer;
+}
+
+
 .text a{
     position: relative;
     display: inline-block;
-    background: #374e58;
+    border: 1px solid #374e58;
     color: #fff;
     text-decoration: none;
-    margin-top: 4rem;
-    padding: 1rem 3rem;
+    margin: 4rem .5rem 0 0;
+    padding: 1rem 1.5rem;
     border-radius: 2rem;
     letter-spacing: 1px;
     text-align: center;
@@ -165,18 +173,32 @@ header .social a:nth-child(3):hover{
     animation: textmove 3s cubic-bezier(.44, .05, .0, .98) 0s;
 }
 
-.text a::before{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    content: '';
-    height: 0;
-    width: 100%;
-    border-radius: 2rem;
-    background: #eee;
-    transition: all ease .3s;
-    z-index: -1;
+.text a i{
+    transition: all ease .5s;
 }
+
+.a-wrapper span{
+    color: #fff;
+    transition: all ease .5s;
+}
+
+.a-wrapper:hover a{
+    padding: 1rem 4rem;
+    background:  #374e58;
+    z-index: -1;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.a-wrapper:hover span{
+    margin-left: -8rem;
+    color: #fff;
+}
+
+.a-wrapper:hover a i{
+    transform: translateX(3rem);
+    color: #fff;
+}
+
 
 .text a:hover{
     color: #333;
@@ -184,9 +206,6 @@ header .social a:nth-child(3):hover{
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
-.text a:hover::before{
-    height: 100%;
-}
 
 @keyframes textmove {
     0%{
