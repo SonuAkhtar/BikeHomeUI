@@ -11,21 +11,24 @@
 </head>
 <body>
     <div class="wrapper">
-        <header>
+        <header id="page_header">
             <div class="logo">
                 <h2>Bike Basics</h2>
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Reviews</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">PRODUCTS</a></li>
+                    <li><a href="#">REVIEWS</a></li>
+                    <li><a href="#">CONTACT</a></li>
                 </ul>
             </div>
             <div class="social">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="menu-btn" id="menu_btn">
+                <i class="fas fa-chevron-circle-down"></i>
             </div>
         </header>
 
@@ -136,6 +139,15 @@
                 $(".info-detail").removeClass("show")
             })
         })
+
+        const menuBtn = document.getElementById("menu_btn");
+        const pageHeader = document.getElementById("page_header");
+        
+        menuBtn.addEventListener('click',()=>{
+            menuBtn.classList.toggle("active");
+            pageHeader.classList.toggle("show");
+        })
+
     </script>
 </body>
 </html>

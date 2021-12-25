@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .wrapper{
@@ -32,6 +33,10 @@ header .logo h2{
     font-family: 'Island Moments', cursive;
 }
 
+header .menu-btn{
+    display: none;
+}
+
 header .menu{
     position: absolute;
     width: 50%;
@@ -49,6 +54,14 @@ header .menu ul{
 header .menu ul li{
     display: inline-block;
     margin-right: 3rem;
+    transform: translateY(0);
+    animation: menuBtns 1s ease-in-out;
+}
+
+@keyframes menuBtns{
+    0%{
+        transform: translateY(-2rem);
+    }
 }
 
 header .menu ul li:last-child{
@@ -60,9 +73,8 @@ header .menu ul li a{
     padding: .5rem 1rem;
     border-radius: 1rem;
     text-decoration: none;
-    text-transform: uppercase;
     letter-spacing: 1px;
-    transform: all ease .5s;
+    transition: all ease .5s;
 }
 
 header .menu ul li a:hover{
@@ -110,7 +122,7 @@ header .social a:nth-child(3):hover{
 .text{
     width: 55%;
     height: 100%;
-    background: #2eafa7;
+    background: #13aa78;
     padding: 3rem;
     display: flex;
     align-items: flex-start;
@@ -219,7 +231,7 @@ header .social a:nth-child(3):hover{
     float: left;
     display: flex;
     height: 100%;
-    padding-top: 80px;
+    padding-top: 5rem;
     overflow: hidden;
 }
 
@@ -228,14 +240,15 @@ header .social a:nth-child(3):hover{
     height: 100%;
     object-fit: cover;
     border-radius: 1rem;
-    transition: all ease 1s;
     transform: translateX(-80px);
-    animation: bikemove 2s cubic-bezier(.5, .1, .0, .1) 0s;
+    filter: grayscale(0);
+    animation: bikemove 2s ease-in-out;
 }
 
 @keyframes bikemove {
     0%{
         transform: translateX(300px);
+        filter: grayscale(1);
     }
     
 }
@@ -251,7 +264,7 @@ header .social a:nth-child(3):hover{
 
 .info-dot.dot1{
     top: 15%;
-    left: 25%;
+    left: 30%;
 }
 
 .info-dot.dot2{
@@ -344,4 +357,157 @@ header .social a:nth-child(3):hover{
 
 .info-detail.show{
     transform: scaleY(1);
+}
+
+/*----- Media Query -----*/
+
+@media screen and (max-width: 418px) {
+
+    header{
+        position: fixed;
+        top: 100vh;
+        right: 0;
+        width: 0;
+        height: 45vh;
+        border-bottom: none;
+        background: #f5f3e7;
+        z-index: 9999;
+        transition: all ease-in-out .5s;
+    }
+
+    header.show{
+        top: 55vh;
+        width: 100%;
+        border-radius: 2rem 2rem 0 0;
+    }
+
+    header .logo h2{
+        position: absolute;
+        bottom: 1rem;
+        padding-left: 1rem;
+        font-size: 2.5rem;
+        color: #218b82;
+    }
+
+    header .menu-btn{
+        display: block;
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        transform: rotate(90deg);
+        font-size: 2.5rem;
+        color: #218b82;
+        transition: all ease .5s;
+    }
+
+    .menu-btn.active{
+        transform: rotate(180deg);
+    }
+    
+    header .menu{
+        width: 100%;
+        padding: 2rem;
+        padding-top: 0rem;
+    }
+    
+    header .menu ul li{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        margin: 1rem 0;
+        font-size: 1.5rem;
+    }
+
+    header .menu ul li a{
+        color:#71ac98;
+    }
+      
+    header .menu ul li a:hover{
+        color:#32ad84;
+        text-shadow: 0 2px 40px #32ad84;
+    }
+    
+    header .social{
+        display: flex;
+        flex-direction: column;
+        padding-right: 2rem;
+    }
+    header .social a{
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        border: none;
+    }
+    
+    header .social a:nth-child(1){
+        color: #4267B2;
+        text-shadow: -1px 10px 30px #4267B2;
+    }
+    
+    header .social a:nth-child(2){
+        color: #e05f53;
+        text-shadow: -1px 10px 30px #e67f76 ;
+    }
+    
+    header .social a:nth-child(3){
+        color: #00acee;
+        text-shadow: -1px 10px 30px #00acee;
+    }
+
+    .banner{
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .text{
+        width: 100%;
+        height: 80vh;
+        clip-path: polygon(0 0, 60% 0, 100% 100%, 0 100%);
+        padding-top: 1rem;
+    }
+
+    .text p{
+        width: 80%;
+    }
+
+    .text a{
+        margin-top: 3rem;
+    }
+
+    .img{
+        width: 100%;
+        height: 60vh;
+        padding-top: 0;
+    }
+
+    .info-detail{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 90vw;
+        height: 35vh;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    .info-dot button{
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .info-dot button::before{
+        width: 4rem;
+        height: 4rem;
+        top: -1rem;
+        left: -1rem;
+    }
+    
 }
