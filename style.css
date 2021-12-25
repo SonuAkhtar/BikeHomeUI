@@ -361,7 +361,7 @@ header .social a:nth-child(3):hover{
 
 /*----- Media Query -----*/
 
-@media screen and (max-width: 418px) {
+@media screen and (max-width: 420px) {
 
     header{
         position: fixed;
